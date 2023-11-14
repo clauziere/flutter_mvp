@@ -24,7 +24,7 @@ class MainPresenter implements IPresenter<MainModel> {
     view.updateModel(model);
   }
 
-  void decrementCounter() async {
+  void decrementCounter() {
     print('Decrementing...');
     var newCount = model.counter - 1;
     model = model.copyWith(counter: newCount, counterStatus: 'Decrementing :(');
