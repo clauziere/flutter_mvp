@@ -2,13 +2,13 @@ import 'package:flutter_mvp/core/mvp/ipresenter.dart';
 import 'package:flutter_mvp/core/mvp/iview.dart';
 import 'package:flutter_mvp/scenes/main/main_model.dart';
 
-class MainPresenter implements IPresenter<MainModel, IView> {
+class MainPresenter implements IPresenter<MainModel> {
   MainPresenter(this.view);
   @override
   IView view;
   @override
   MainModel model = const MainModel(
-      counter: 0, counterStatus: 'this is default counter status text');
+      counter: 0, counterStatus: 'this is the default counter status text');
 
   void incrementCounter() {
     print('Incrementing...');

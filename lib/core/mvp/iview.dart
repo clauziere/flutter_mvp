@@ -6,6 +6,7 @@ abstract class IView<M extends IModel, P extends IPresenter>
     extends State<StatefulWidget> {
   late final P presenter;
   P createPresenter();
+
   IView() {
     presenter = createPresenter();
   }

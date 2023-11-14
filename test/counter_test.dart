@@ -32,8 +32,8 @@ void main() {
     test('status text should change', () {
       final view = MockMainViewState();
       final presenter = MainPresenter(view);
-      expect(
-          presenter.model.counterStatus, 'this is default counter status text');
+      expect(presenter.model.counterStatus,
+          'this is the default counter status text');
       presenter.incrementCounter(); //1
       expect(presenter.model.counterStatus, "It's a start");
       presenter.incrementCounter(); //2
