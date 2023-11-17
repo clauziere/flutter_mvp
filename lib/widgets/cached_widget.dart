@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class MyInheritedWidget extends InheritedWidget {
-  final String data;
+class CachedWidget extends InheritedWidget {
+  final Object data;
 
-  const MyInheritedWidget({
+  const CachedWidget({
     required this.data,
     required Widget child,
     Key? key,
   }) : super(key: key, child: child);
 
-  static MyInheritedWidget of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<MyInheritedWidget>()!;
+  static CachedWidget of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<CachedWidget>()!;
   }
 
   @override
-  bool updateShouldNotify(MyInheritedWidget oldWidget) {
+  bool updateShouldNotify(CachedWidget oldWidget) {
     bool update = data != oldWidget.data;
     print('updateShouldNotify called. Update: $update');
     return update;

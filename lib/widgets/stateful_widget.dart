@@ -1,31 +1,26 @@
 import 'package:flutter/material.dart';
 
-class StatefulButton extends StatefulWidget {
-  const StatefulButton({Key? key, required this.text}) : super(key: key);
+class StatefulText extends StatefulWidget {
+  const StatefulText({Key? key, required this.text}) : super(key: key);
 
   final String text;
   @override
-  State<StatefulButton> createState() => _MyButtonState();
+  State<StatefulText> createState() => _StatefulTextState();
 }
 
-class _MyButtonState extends State<StatefulButton>
-    with AutomaticKeepAliveClientMixin {
+class _StatefulTextState extends State<StatefulText> {
   @override
   Widget build(BuildContext context) {
-    super.build(context);
-    print('Button build called');
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(widget.text),
-    );
+    print('StatefulText build called');
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+      const Text("StatefulText:"),
+      Text(widget.text),
+    ]);
   }
 
   @override
-  void didUpdateWidget(covariant StatefulButton oldWidget) {
-    print('Button widget updated');
+  void didUpdateWidget(covariant StatefulText oldWidget) {
+    print('StatefulText widget updated');
     super.didUpdateWidget(oldWidget);
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

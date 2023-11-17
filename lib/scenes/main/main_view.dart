@@ -3,6 +3,8 @@ import 'package:flutter_mvp/core/mvp/iview.dart';
 import 'package:flutter_mvp/scenes/main/main_model.dart';
 import 'package:flutter_mvp/scenes/main/main_presenter.dart';
 import 'package:flutter_mvp/widgets/counter_status.dart';
+import 'package:flutter_mvp/widgets/cached_widget.dart';
+import 'package:flutter_mvp/widgets/stateful_widget.dart';
 
 class MainView extends StatefulWidget {
   const MainView({
@@ -54,7 +56,10 @@ class MainViewState extends IView<MainModel, MainPresenter> {
               '$counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            CounterStatus(text: counterStatus)
+            CachedWidget(
+              data: counterStatus,
+              child: const CounterStatus(),
+            )
           ],
         ),
       ),
